@@ -56,8 +56,19 @@ print(arrayOfNumbers)
 //iterate throgh the array
 print("==========================Finding 42=============================")
 
-for i in 0..<arrayOfNumbers.count{
-    if arrayOfNumbers[i] == 42{
-        print("We found the answer to the Ultimate Question of Life, the Universe, and Everything at index \(i)")
+//for i in 0..<arrayOfNumbers.count{
+//    if arrayOfNumbers[i] == 42 {
+//        print("We found the answer to the Ultimate Question of Life, the Universe, and Everything at index \(i)")
+//
+//    }
+//}
+
+
+if arrayOfNumbers.contains(42){
+    let i: Int? = arrayOfNumbers.firstIndex(of: 42)
+    if let index = i {
+        arrayOfNumbers.remove(at: index)
+        print("We found the answer to the Ultimate Question of Life, the Universe, and Everything at index \(index)")
+        print(arrayOfNumbers)
     }
 }
